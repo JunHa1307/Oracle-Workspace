@@ -22,5 +22,8 @@ GRANT CONNECT , RESOURCE TO KH;
     CONNECT : 사용자가 데이터베이스에 접속 가능하도록 하기 위한 CRATE SESSION 권한이 있는 ROLE
     RESOURCE : CRETE 구문을 통해 객체를 생성할 수 있는 권한과 INSERT, UPDATE, DELETE 구문을 사용할 수 있는 권한을
     모아놓은 ROLE
-    
+    행(row) 컬럼 기본키 외래키 null 컬럼값
 */
+
+
+
