@@ -278,6 +278,14 @@ SELECT *
 FROM EMPLOYEE
 WHERE EMP_NAME LIKE '_지_';
 
+--  내가 찾고자 하는 문자 -> _ %
+--  HA_IY@KH.OR.KR
+--  _기준으로 앞에 딱 2글자만 있는 이메일
+SELECT *
+FROM EMPLOYEE
+WHERE EMAIL LIKE '__\_%' ESCAPE'\';
+
+
 -------------------------실습문제------------------------------
 -- 1. 이름이 '연'으로 끝나는 사원들의 이름, 입사일 조회
 SELECT EMP_NAME , HIRE_DATE
