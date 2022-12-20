@@ -99,7 +99,7 @@ WHERE E.JOB_CODE = J.JOB_CODE;
 --      => 무조건  ON 구문만 가능.
 SELECT EMP_ID, EMP_NAME, DEPT_CODE, DEPT_TITLE
 FROM EMPLOYEE
-JOIN DEPARTMENT ON DEPT_CODE = DEPT_ID; -- INNER 생략 가능
+/*INNER*/JOIN DEPARTMENT ON DEPT_CODE = DEPT_ID; -- INNER 생략 가능
 
 --  전체 사원들의 사번, 사원명, 직급코드, 직급명
 --  2) 연결할 칼럼명이 동일한 경우(JOB_CODE)
