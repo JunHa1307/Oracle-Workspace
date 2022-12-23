@@ -81,12 +81,24 @@ AS SELECT STUDENT_NO 학번,STUDENT_NAME 학생이름, STUDENT_ADDRESS 주소
 --  15.
 SELECT CLASS_NO 과목번호, CLASS_NAME 과목이름, "누적수강생수(명)"
 FROM(
-     SELECT CLASS_NO, COUNT(CLASS_NO) "누적수강생수(명)"
-     FROM ( 
-            SELECT TERM_NO, CLASS_NO 
-            FROM TB_GRADE WHERE TERM_NO >= 200701)
-            GROUP BY CLASS_NO
-            ORDER BY "누적수강생수(명)" DESC
+         SELECT CLASS_NO, COUNT(CLASS_NO) "누적수강생수(명)"
+         FROM TB_GRADE
+         WHERE TERM_NO >= 200701
+         GROUP BY CLASS_NO
+         ORDER BY 2 DESC
      )
      JOIN TB_CLASS USING(CLASS_NO)
+WHERE ROWNUM <= 3;
+
+SELECT * 
+FROM(
+    SELECT CLASS_NO 과목번호, CLASS_NAME 과목이름, COUNT(*) "누적수강생수(명)"
+    FROM TB_GRADE
+    JOIN TB_CLASS USING(CLASS_NO)
+    WHERE TERM_NO LIKE '2009%'
+        OR TERM_NO LIKE '2008%'
+        OR TERM_NO LIKE '2007%'
+    GROUP BY CLASS_NO, CLASS_NAME
+    ORDER BY 3 DESC
+    ) C
 WHERE ROWNUM <= 3;
